@@ -29,7 +29,6 @@ public class LoginSteps {
     public void clicksOnUserStatus() {
         home = Selenide.page(HomePage.class);
         home.clickOnStatusLogin();
-
     }
 
     @Then("User verifies his name")
