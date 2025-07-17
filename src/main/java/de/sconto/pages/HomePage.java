@@ -1,12 +1,15 @@
 package de.sconto.pages;
 
 import com.codeborne.selenide.Selenide;
+import de.sconto.utils.PropertiesLoader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage {
+
+    public static final String baseURL = PropertiesLoader.loadProperty("url");
 
     @FindBy(css = ".consentForm__acceptButton:nth-child(2)")
     WebElement acceptAll;
@@ -18,7 +21,7 @@ public class HomePage {
         return Selenide.page(this);
     }
 
-    @FindBy(css = ".headerElement__icon--login")
+    @FindBy(css =".headerElement__icon--login")
     WebElement loginIcon;
 
     public LoginPage clickLoginIcon() {
@@ -26,7 +29,7 @@ public class HomePage {
         return Selenide.page(LoginPage.class);
     }
 
-    @FindBy(css = ".headerElement__status--login")
+    @FindBy(css =".headerElement__status--login")
     WebElement statusLogin;
 
     public LoginPage clickOnStatusLogin() {

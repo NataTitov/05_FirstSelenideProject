@@ -17,7 +17,7 @@ public class LoginSteps {
     @And("User enters correct data")
     public void entersData() {
         login = Selenide.page(LoginPage.class);
-        login.enterData("pataha@gmx.de", "Aa12345!");
+        login.enterData();
     }
 
     @And("User clicks on Anmelden button")
@@ -33,6 +33,6 @@ public class LoginSteps {
 
     @Then("User verifies his name")
     public void verifiesName() {
-        login.verifyName("Natalia Titov");
+        login.verifyName();
     }
 }
